@@ -1,22 +1,25 @@
 package com.jeefix.iot.milight.common;
 
-import org.testng.annotations.Test;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Tests of {@link HexUtils}
  * Created by Maciej Iskra (iskramac) on 2017-01-03.
  */
+@RunWith(JUnit4.class)
 public class HexUtilsTest {
-
     @Test
     public void shouldConvertHexToString() {
         byte[] hexArray = new byte[]{0x00, 0x11, 0x21, 0x71, 0x1b, 0x2a};
         String hexArrayString = "00 11 21 71 1B 2A";
         String convertedHexArrayString = HexUtils.getHexAsString(hexArray);
 
-        assertThat(hexArrayString).isEqualTo(convertedHexArrayString);
+        assertEquals(hexArrayString, convertedHexArrayString);
     }
 
     @Test
@@ -26,8 +29,7 @@ public class HexUtilsTest {
 
         byte[] convertedHexArray = HexUtils.getStringAsHex(hexArrayString);
 
-        assertThat(hexArray).isEqualTo(convertedHexArray);
-
+        assertArrayEquals(hexArray, convertedHexArray);
     }
 
     @Test
@@ -39,6 +41,6 @@ public class HexUtilsTest {
             byte[] tempByte = HexUtils.getStringAsHex(hexArrayStringConverted);
             hexArrayStringConverted = HexUtils.getHexAsString(tempByte);
         }
-        assertThat(hexArrayString).isEqualTo(hexArrayStringConverted);
+        assertEquals(hexArrayString, hexArrayStringConverted);
     }
 }

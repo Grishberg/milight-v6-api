@@ -16,12 +16,12 @@ public enum MilightCommand {
     /**
      * Sets leds on
      */
-    LED_ON("31 00 00 08 04 01 00 00 00"),
+    LIGHT_ON("31 00 00 08 04 01 00 00 00"),
 
     /**
      * Sets leds off
      */
-    LED_OFF("31 00 00 08 04 02 00 00 00"),
+    LIGHT_OFF("31 00 00 08 04 02 00 00 00"),
 
     /**
      * Set brightness level. This command is parametrized! Change first occurrence of '%02d' to level in range 0-64
@@ -56,7 +56,9 @@ public enum MilightCommand {
 
     IBOX_WHITE_ON("31 00 00 00 03 05 00 00 00"),
 
-    IBOX_HUE("31 00 00 00 01 %02X 00 00 00");
+    IBOX_HUE("31 00 00 00 01 %02X 00 00 00"),
+
+    KELVIN("31 00 00 08 05 %02X 00 00 00");
 
     private String hexCommand;
 

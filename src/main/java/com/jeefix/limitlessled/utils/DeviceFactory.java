@@ -2,7 +2,6 @@ package com.jeefix.limitlessled.utils;
 
 import com.jeefix.iot.milight.common.MilightException;
 import com.jeefix.limitlessled.device.BaseDevice;
-import com.jeefix.limitlessled.device.LedStripDevice;
 import com.jeefix.limitlessled.session.SessionService;
 import com.jeefix.limitlessled.transport.SimpleTransportService;
 import com.jeefix.limitlessled.transport.TransportService;

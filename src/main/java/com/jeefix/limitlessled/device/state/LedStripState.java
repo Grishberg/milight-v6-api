@@ -10,6 +10,7 @@ public class LedStripState extends DeviceState {
     private int brightness;
     private int hue;
     private int saturation;
+    private int kelvin;
     private boolean white;
 
     public int getBrightness() {
@@ -44,5 +45,13 @@ public class LedStripState extends DeviceState {
 
     public void setWhite(boolean white) {
         this.white = white;
+    }
+
+    public void setKelvin(int kelvin) {
+        this.kelvin = kelvin;
+    }
+
+    public int getKelvin() {
+        return kelvin;
     }
 }
